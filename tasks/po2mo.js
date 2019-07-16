@@ -8,33 +8,33 @@
 
 'use strict';
 
-var exec = require('sync-exec');
+const exec = require('child_process').spawnSync;
 
 module.exports = function(grunt) {
 
   grunt.registerMultiTask('po2mo', 'Compile .po files into binary .mo files with msgfmt.', function() {
 
-    var options = this.options({
+    const options = this.options({
       deleteSrc: false,
     });
 
     this.files.forEach(function(file) {
 
-      var src = file.src[0];
-      var dest = file.dest;
+      const src = file.src[0];
+      let dest = file.dest;
       if (dest.indexOf('.po') > -1) {
         dest = dest.replace('.po', '.mo');
       }
       grunt.file.write(dest);
 
-      var command = 'msgfmt -o ' + dest + ' ' + src;
+      const command = 'msgfmt -o ' + dest + ' ' + src;
 
       grunt.verbose.writeln('Executing: ' + command);
-      var result = exec(command);
+      const result = exec('msgfmt', ['-o', dest, src]);
       grunt.verbose.writeln('Executed with status: ' + result.status);
 
       if (result.status !== 0) {
-        grunt.log.error(result.stderr);
+        grunt.log.error(result.output);
       }
 
       if (options.deleteSrc) {

@@ -1,24 +1,27 @@
 {
-  "name": "grunt-po2mo",
+  "name": "@eater/grunt-po2mo",
   "description": "Compile .po files into binary .mo files with msgfmt.",
   "version": "0.1.2",
-  "homepage": "https://github.com/MicheleBertoli/grunt-po2mo",
+  "homepage": "https://github.com/the-eater/grunt-po2mo",
   "author": {
     "name": "Michele Bertoli",
     "email": "michele@berto.li",
     "url": "http://michele.berto.li"
   },
+  "contributors": ["eater <=@eater.me>"],
   "repository": {
     "type": "git",
-    "url": "git://github.com/MicheleBertoli/grunt-po2mo.git"
+    "url": "git://github.com/the-eater/grunt-po2mo.git"
   },
   "bugs": {
-    "url": "https://github.com/MicheleBertoli/grunt-po2mo/issues"
+    "url": "https://github.com/the-eater/grunt-po2mo/issues"
   },
-  "licenses": [{
-    "type": "MIT",
-    "url": "https://github.com/MicheleBertoli/grunt-po2mo/blob/master/LICENSE-MIT"
-  }],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/the-eater/grunt-po2mo/blob/master/LICENSE-MIT"
+    }
+  ],
   "main": "Gruntfile.js",
   "engines": {
     "node": ">= 0.8.0"
@@ -27,18 +30,15 @@
     "test": "grunt test"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt-contrib-clean": "~0.4.0",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt": "~0.4.1"
+    "grunt": "~1.0.4",
+    "grunt-contrib-clean": "~2.0.0",
+    "grunt-contrib-jshint": "~2.1.0",
+    "grunt-contrib-nodeunit": "~2.0.0"
   },
   "peerDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "~1.0.4"
   },
   "keywords": [
     "gruntplugin"
-  ],
-  "dependencies": {
-    "sync-exec": "^0.4.0"
-  }
+  ]
 }
